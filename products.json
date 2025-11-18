@@ -36,11 +36,11 @@
     "wa": "Saya mau order Paket XUT TikTok di JMS STORE."
   },
   {
-    "name": "VPS Premium SG – 4GB RAM",
+    "name": "VPS Singapore – 4GB RAM",
     "category": "VPS",
     "price": "Rp50.000",
     "desc": "VPS Singapura 4GB RAM 2 vCpu, stabil & low latency.",
-    "detail": "VPS Premium Singapura dengan RAM 4GB, 2 vCPU, dan bandwidth besar. Cocok untuk bot Telegram, panel, dan script vpn.",
+    "detail": "VPS DigitalOcehan region Singapura dengan RAM 4GB, 2 vCPU, dan bandwidth besar. Cocok untuk bot Telegram, panel, dan script vpn.",
     "img": "img/vps.png",
     "wa": "kak Saya mau order VPS Premium SG Ram 4 di JMS STORE."
   },
@@ -48,8 +48,8 @@
     "name": "VPS Indonesia – 2GB RAM",
     "category": "VPS",
     "price": "Rp80.000",
-    "desc": "VPS Indonesia 2GB RAM 2GB vCpu, low ping untuk user lokal.",
-    "detail": "VPS Indonesia dengan RAM 2GB. Cocok untuk hosting panel, bot, dan layanan lokal dengan ping rendah.",
+    "desc": "VPS Indonesia Nevacloud 2GB RAM 2GB vCpu, low ping untuk user lokal.",
+    "detail": "VPS Nevacloud Indonesia dengan RAM 2GB. Cocok untuk hosting panel, bot, dan layanan lokal dengan ping rendah.",
     "img": "img/vps.png",
     "wa": "Saya mau order VPS Indonesia 2GB di JMS STORE."
   },
