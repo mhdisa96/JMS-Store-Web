@@ -5,225 +5,112 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>JMS STORE – Katalog Produk</title>
 
-  <!-- Favicon (icon di tab) -->
-  <link rel="icon" type="image/png" href="https://i.ibb.co/4wPq0LRj/IMG-20251110-091057-807.jpg" />
-
   <style>
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-family: system-ui, sans-serif;
     }
 
     body {
-      background: radial-gradient(circle at top, #020617 0, #020617 40%, #020617 100%);
+      background: #020617;
       color: #e5e7eb;
     }
 
-    /* HEADER PREMIUM */
     header {
-      background: radial-gradient(circle at top left, #1f2937, #020617 55%);
+      background: #0f172a;
+      padding: 16px;
       border-bottom: 1px solid #1f2937;
       position: sticky;
       top: 0;
-      z-index: 40;
-      padding: 10px 16px 14px;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
-    }
-
-    .header-inner {
-      max-width: 1100px;
-      margin: 0 auto;
-      display: flex;
-      align-items: center;
-      gap: 14px;
-    }
-
-    /* Logo bulat */
-    .header-logo {
-      width: 52px;
-      height: 52px;
-      border-radius: 999px;
-      object-fit: cover;
-      border: 2px solid rgba(148, 163, 184, 0.6);
-      flex-shrink: 0;
-    }
-
-    .brand-text {
-      flex: 1;
+      z-index: 20;
     }
 
     .brand-name {
-      font-size: 1.3rem;
-      font-weight: 800;
-      letter-spacing: 0.12em;
+      font-size: 1.7rem;
+      font-weight: 700;
       text-transform: uppercase;
-    }
-
-    .brand-tagline {
-      font-size: 0.8rem;
-      color: #9ca3af;
-      margin-top: 2px;
-    }
-
-    .brand-sub {
-      font-size: 0.75rem;
-      color: #60a5fa;
-      margin-top: 1px;
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
-    }
-
-    .header-right {
-      flex: 1.1;
     }
 
     .search-box {
+      margin-top: 14px;
       display: flex;
-      gap: 8px;
-      flex-wrap: wrap;
-      justify-content: flex-end;
-    }
-
-    .search-box input,
-    .search-box select {
-      padding: 9px 12px;
-      border-radius: 999px;
-      border: 1px solid #334155;
-      background: #020617;
-      color: #e5e7eb;
-      font-size: 0.82rem;
-    }
-
-    .search-box input {
-      flex: 1.4;
-      min-width: 150px;
-    }
-
-    .search-box input::placeholder {
-      color: #6b7280;
-    }
-
-    .search-box select {
-      flex: 0.9;
-      min-width: 130px;
-    }
-
-    main {
-      padding: 26px 16px 40px;
-    }
-
-    .container {
-      max-width: 1100px;
-      margin: 0 auto;
-    }
-
-    .section-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
       gap: 10px;
       flex-wrap: wrap;
     }
 
-    .section-title {
-      font-size: 1.2rem;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
+    .search-box input,
+    .search-box select {
+      padding: 10px 14px;
+      border-radius: 999px;
+      border: 1px solid #334155;
+      background: #020617;
+      color: #e5e7eb;
     }
 
-    .section-subtitle {
-      font-size: 0.8rem;
-      color: #9ca3af;
+    .search-box input {
+      flex: 1;
+      min-width: 160px;
+    }
+
+    main {
+      padding: 25px 16px 40px;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .section-title {
+      font-size: 1.2rem;
+      margin-bottom: 12px;
+      text-transform: uppercase;
     }
 
     .product-grid {
       display: grid;
       gap: 18px;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      margin-top: 18px;
     }
 
     .card {
-      background: radial-gradient(circle at top, #111827, #020617 65%);
-      border-radius: 16px;
+      background: #0f172a;
+      border-radius: 14px;
       padding: 14px;
-      border: 1px solid #1f2937;
+      border: 1px solid #1e293b;
       display: flex;
       flex-direction: column;
-      min-height: 100%;
-      box-shadow: 0 14px 35px rgba(0, 0, 0, 0.7);
-      transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
-    }
-
-    .card:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 20px 45px rgba(0, 0, 0, 0.9);
-      border-color: #22c55e33;
     }
 
     .card img {
       width: 100%;
       height: 150px;
-      border-radius: 12px;
+      border-radius: 10px;
       object-fit: cover;
       margin-bottom: 10px;
-      border: 1px solid #1f2937;
-      background: #020617;
-    }
-
-    .card-top-row {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 6px;
-      margin-bottom: 4px;
     }
 
     .card-category {
-      font-size: 0.72rem;
-      color: #9ca3af;
+      font-size: 0.75rem;
+      color: #94a3b8;
       text-transform: uppercase;
-      letter-spacing: 0.16em;
-    }
-
-    .pill {
-      font-size: 0.7rem;
-      padding: 3px 8px;
-      border-radius: 999px;
-      border: 1px solid #4b5563;
-      color: #e5e7eb;
-      white-space: nowrap;
-    }
-
-    .pill-vpn {
-      border-color: #22c55e;
-      color: #bbf7d0;
-    }
-
-    .pill-vps {
-      border-color: #60a5fa;
-      color: #bfdbfe;
+      margin-bottom: 4px;
     }
 
     .card-title {
       font-size: 1rem;
       font-weight: 700;
-      margin-bottom: 4px;
     }
 
     .card-price {
       color: #4ade80;
       font-weight: 700;
-      margin: 4px 0 6px;
-      font-size: 0.95rem;
+      margin: 5px 0;
     }
 
     .card-desc {
-      color: #9ca3af;
+      color: #94a3b8;
       font-size: 0.85rem;
-      margin-bottom: 12px;
+      margin-bottom: 14px;
       flex: 1;
     }
 
@@ -231,7 +118,6 @@
       display: flex;
       gap: 8px;
       flex-wrap: wrap;
-      margin-top: 4px;
     }
 
     .btn {
@@ -241,43 +127,29 @@
       cursor: pointer;
       font-size: 0.8rem;
       text-align: center;
-      white-space: nowrap;
-      transition: transform 0.1s ease, box-shadow 0.1s ease, background 0.1s ease, border-color 0.1s ease;
+      flex: 1;
     }
 
     .btn-primary {
-      background: linear-gradient(135deg, #22c55e, #16a34a);
+      background: #22c55e;
       color: #020617;
       font-weight: 700;
-      flex: 1;
-      box-shadow: 0 10px 25px rgba(34, 197, 94, 0.35);
     }
 
     .btn-outline {
-      border: 1px solid #4b5563;
+      border: 1px solid #475569;
+      background: none;
       color: #e5e7eb;
-      background: transparent;
     }
 
-    .btn:hover {
-      transform: translateY(-1px);
-      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.6);
-    }
-
-    .btn-outline:hover {
-      border-color: #e5e7eb;
-    }
-
-    /* MODAL DETAIL */
     .modal-backdrop {
       position: fixed;
       inset: 0;
-      background: rgba(15, 23, 42, 0.92);
+      background: rgba(0, 0, 0, 0.7);
       display: none;
       align-items: center;
       justify-content: center;
       z-index: 50;
-      padding: 16px;
     }
 
     .modal-backdrop.show {
@@ -286,70 +158,24 @@
 
     .modal {
       background: #020617;
-      border-radius: 18px;
-      max-width: 460px;
+      border: 1px solid #1e293b;
+      border-radius: 14px;
+      padding: 16px;
+      max-width: 420px;
       width: 100%;
-      border: 1px solid #1f2937;
-      padding: 16px 18px 18px;
-      box-shadow: 0 24px 70px rgba(0, 0, 0, 0.9);
     }
 
     .modal-title {
-      font-size: 1.05rem;
-      font-weight: 700;
+      font-size: 1.2rem;
       margin-bottom: 10px;
-    }
-
-    .modal-body p {
-      margin-bottom: 6px;
-      font-size: 0.9rem;
-    }
-
-    .btn-close {
-      padding: 6px 12px;
-      border-radius: 999px;
-      border: 1px solid #4b5563;
-      background: transparent;
-      color: #e5e7eb;
-      cursor: pointer;
-      font-size: 0.8rem;
-      margin-top: 6px;
+      font-weight: 700;
     }
 
     footer {
       text-align: center;
-      padding: 14px 16px 18px;
+      padding: 20px;
       color: #64748b;
-      font-size: 0.8rem;
-      border-top: 1px solid #1f2937;
-    }
-
-    @media (max-width: 720px) {
-      header {
-        padding: 10px 10px 12px;
-      }
-
-      .header-inner {
-        flex-direction: row;
-        align-items: flex-start;
-      }
-
-      .brand-name {
-        font-size: 1.1rem;
-      }
-
-      .brand-sub {
-        font-size: 0.7rem;
-      }
-
-      .header-right {
-        width: 100%;
-        margin-top: 6px;
-      }
-
-      .search-box {
-        justify-content: flex-start;
-      }
+      margin-top: 40px;
     }
   </style>
 </head>
@@ -357,168 +183,105 @@
 <body>
 
 <header>
-  <div class="header-inner">
-    <!-- LOGO HEADER -->
-    <img src="https://i.ibb.co/4wPq0LRj/IMG-20251110-091057-807.jpg" alt="Logo JMS STORE" class="header-logo" />
+  <div class="brand-name">JMS STORE</div>
 
-    <div class="brand-text">
-      <div class="brand-name">JMS STORE</div>
-      <div class="brand-tagline">Katalog Paket Data, VPN, dan VPS untuk kebutuhan harian & bisnis kamu.</div>
-      <div class="brand-sub">VPN · PAKET DATA · VPS</div>
-    </div>
-
-    <div class="header-right">
-      <div class="search-box">
-        <input
-          type="text"
-          id="searchInput"
-          placeholder="Cari nama produk..."
-          oninput="filterItems()"
-        />
-        <select id="categoryFilter" onchange="filterItems()">
-          <option value="">Semua Kategori</option>
-          <option value="Paket Data">Paket Data</option>
-          <option value="VPN Premium SG">VPN Premium SG</option>
-          <option value="VPN Premium ID">VPN Premium ID</option>
-          <option value="VPS">VPS</option>
-        </select>
-      </div>
-    </div>
+  <div class="search-box">
+    <input type="text" id="searchInput" placeholder="Cari produk..." oninput="filterItems()">
+    <select id="categoryFilter" onchange="filterItems()">
+      <option value="">Semua Kategori</option>
+      <option value="Paket Data">Paket Data</option>
+      <option value="VPN Premium SG">VPN Premium SG</option>
+      <option value="VPN Premium ID">VPN Premium ID</option>
+      <option value="VPS">VPS</option>
+    </select>
   </div>
 </header>
 
 <main>
-  <div class="container">
-    <div class="section-header">
-      <h2 class="section-title">Produk JMS STORE</h2>
-      <div class="section-subtitle">Scroll, pilih produk, lalu klik Order WhatsApp untuk langsung chat admin.</div>
-    </div>
-
-    <div class="product-grid" id="productGrid"></div>
-  </div>
+  <h2 class="section-title">Produk JMS STORE</h2>
+  <div class="product-grid" id="productGrid"></div>
 </main>
 
-<!-- MODAL DETAIL -->
 <div class="modal-backdrop" id="detailModalBackdrop">
   <div class="modal">
     <div class="modal-title" id="modalTitle"></div>
-    <div class="modal-body">
-      <p id="modalCategory"></p>
-      <p id="modalPrice"></p>
-      <p id="modalDesc"></p>
-      <p id="modalDetail"></p>
-    </div>
-    <button class="btn-close" onclick="closeModal()">Tutup</button>
+    <p id="modalCategory"></p>
+    <p id="modalPrice"></p>
+    <p id="modalDesc"></p>
+    <p id="modalDetail"></p>
+    <button class="btn btn-outline" onclick="closeModal()">Tutup</button>
   </div>
 </div>
 
 <footer>
-  © <span id="year"></span> JMS STORE — Katalog resmi paket & layanan.
+  © <span id="year"></span> JMS STORE
 </footer>
 
 <script>
-  document.getElementById("year").textContent = new Date().getFullYear();
+document.getElementById("year").textContent = new Date().getFullYear();
 
-  let products = [];
+let products = [];
 
-  async function loadProducts() {
-    try {
-      const res = await fetch("products.json");
-      products = await res.json();
-      renderProducts();
-    } catch (e) {
-      console.error("Gagal memuat products.json:", e);
-    }
-  }
+async function loadProducts() {
+  const res = await fetch("products.json");
+  products = await res.json();
+  renderProducts();
+}
 
-  function renderProducts() {
-    const grid = document.getElementById("productGrid");
-    grid.innerHTML = "";
+function renderProducts() {
+  const grid = document.getElementById("productGrid");
+  grid.innerHTML = "";
 
-    products.forEach((p, i) => {
-      const card = document.createElement("div");
-      card.className = "card";
-      card.setAttribute("data-name", p.name.toLowerCase());
-      card.setAttribute("data-category", p.category);
+  products.forEach((p, i) => {
+    const card = document.createElement("div");
+    card.className = "card";
+    card.setAttribute("data-name", p.name.toLowerCase());
+    card.setAttribute("data-category", p.category);
 
-      const pillClass =
-        p.category === "VPN Premium SG" || p.category === "VPN Premium ID"
-          ? "pill pill-vpn"
-          : p.category === "VPS"
-          ? "pill pill-vps"
-          : "pill";
-
-      const pillLabel =
-        p.category === "Paket Data" ? "DATA" : p.category.includes("VPN") ? "VPN" : "VPS";
-
-      card.innerHTML = `
-        <img src="${p.img}" alt="${p.name}">
-        <div class="card-top-row">
-          <div class="card-category">${p.category}</div>
-          <div class="${pillClass}">${pillLabel}</div>
-        </div>
-        <div class="card-title">${p.name}</div>
-        <div class="card-price">${p.price}</div>
-        <div class="card-desc">${p.desc}</div>
-        <div class="card-footer">
-          <a
-            class="btn btn-primary"
-            target="_blank"
-            href="https://wa.me/6281234567890?text=${encodeURIComponent(p.wa)}"
-          >
-            Order WhatsApp
-          </a>
-          <button class="btn btn-outline" onclick="openDetail(${i})">Detail</button>
-        </div>
-      `;
-
-      grid.appendChild(card);
-    });
-  }
-
-  function filterItems() {
-    const txt = document.getElementById("searchInput").value.toLowerCase();
-    const cat = document.getElementById("categoryFilter").value;
-
-    document.querySelectorAll(".card").forEach((card) => {
-      const okName = card.getAttribute("data-name").includes(txt);
-      const okCat = cat === "" || card.getAttribute("data-category") === cat;
-      card.style.display = okName && okCat ? "flex" : "none";
-    });
-  }
-
-  function openDetail(i) {
-    const p = products[i];
-    if (!p) return;
-    document.getElementById("modalTitle").textContent = p.name;
-    document.getElementById("modalCategory").textContent = p.category
-      ? "Kategori: " + p.category
-      : "";
-    document.getElementById("modalPrice").textContent = p.price
-      ? "Harga: " + p.price
-      : "";
-    document.getElementById("modalDesc").textContent = p.desc
-      ? "Ringkas: " + p.desc
-      : "";
-    document.getElementById("modalDetail").textContent = p.detail
-      ? "Detail: " + p.detail
-      : "";
-    document.getElementById("detailModalBackdrop").classList.add("show");
-  }
-
-  function closeModal() {
-    document.getElementById("detailModalBackdrop").classList.remove("show");
-  }
-
-  document.getElementById("detailModalBackdrop").addEventListener("click", (e) => {
-    if (e.target.id === "detailModalBackdrop") closeModal();
+    card.innerHTML = `
+      <img src="${p.img}">
+      <div class="card-category">${p.category}</div>
+      <div class="card-title">${p.name}</div>
+      <div class="card-price">${p.price}</div>
+      <div class="card-desc">${p.desc}</div>
+      <div class="card-footer">
+        <a class="btn btn-primary" target="_blank" href="https://wa.me/6281234567890?text=${encodeURIComponent(p.wa)}">
+          Order WhatsApp
+        </a>
+        <button class="btn btn-outline" onclick="openDetail(${i})">Detail</button>
+      </div>
+    `;
+    grid.appendChild(card);
   });
+}
 
-  document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape") closeModal();
+function filterItems() {
+  const txt = document.getElementById("searchInput").value.toLowerCase();
+  const cat = document.getElementById("categoryFilter").value;
+
+  document.querySelectorAll(".card").forEach((card) => {
+    const okName = card.getAttribute("data-name").includes(txt);
+    const okCat = cat === "" || card.getAttribute("data-category") === cat;
+    card.style.display = okName && okCat ? "flex" : "none";
   });
+}
 
-  loadProducts();
+function openDetail(i) {
+  const p = products[i];
+  document.getElementById("modalTitle").textContent = p.name;
+  document.getElementById("modalCategory").textContent = "Kategori: " + p.category;
+  document.getElementById("modalPrice").textContent = "Harga: " + p.price;
+  document.getElementById("modalDesc").textContent = "Ringkas: " + p.desc;
+  document.getElementById("modalDetail").textContent = "Detail: " + p.detail;
+  document.getElementById("detailModalBackdrop").classList.add("show");
+}
+
+function closeModal() {
+  document.getElementById("detailModalBackdrop").classList.remove("show");
+}
+
+loadProducts();
 </script>
+
 </body>
 </html>
